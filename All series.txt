@@ -1,0 +1,106 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,c,n=1,k,count,times,sum,fac,repeat,p,e;
+    while(n)
+    {
+        printf("\nEnter any Number : ");
+        scanf("%d",&a);
+        printf("\n[1]Even series ");
+        printf("\n[2]Odd series");
+        printf("\n[3]Prime series");
+        printf("\n[4]Perfect series");
+        printf("\n[5]Palindrome series");
+        printf("\n[6]Angstrome series");
+        printf("\n[7]Fibrionic series");
+        printf("\n[8]Strong series");
+        printf("\nEnter the number related to series   : [1/2/3/4/5/6/7/8] ");
+        scanf("%d",&k);
+        switch(k)
+        {
+            case 1:
+            printf("The Even series of given num is  :");
+            for(count=0;count<=a;count++){
+            if(count%2==0)
+            printf("\n%d",count);
+            }
+            break;
+            case 2:
+            printf("The odd series of given num is : ");
+            for(count=1;count<=a;count++)
+            {
+                if(count%2!=0)
+                printf("\n%d",count);
+            }
+            break;
+            case 3:
+            for(count=1;count<=a;count++)
+            { repeat=0;
+                for(times=1;times<=count;times++)
+                { 
+                    if(count%times==0)
+                    repeat++;
+                }
+                    if(repeat==2)
+                    printf("\n%d",count);
+            }
+            break;
+            case 4:
+            for(count=1;count<a;count++)
+            { sum=0;
+                for(times=1;times<count;times++)
+                {
+                    if(count%times==0)
+                    sum=sum+times;
+                }
+                    if(sum==count)
+                    printf("\n%d",count);
+            }
+            break;
+            case 5:
+            for(count=1;count<=a;count++)
+            { p=count;
+              e=0;
+                while(p) 
+                {
+                b=p%10;
+                e=e*10+b;
+                p=p/10;
+                }
+                if(e==count)
+                printf("\n%d",count);
+            }
+            break;
+            case 6: 
+            for(count=1;count<=a;count++)
+            {
+                p=count;
+                e=0;
+                while(p)
+                {
+                    b=p%10;
+                    e=e+b*b*b;
+                    p=p/10;
+                }
+                if(e==count)
+                printf("\n%d",count);
+            }
+            break;
+            case 7:
+            b=0;
+            c=1;
+            printf("%d\n%d",b,c);
+            for(count=2;count<a;count++)
+            {
+                sum=b+c;
+                printf("\n%d",sum);
+                b=c;
+                c=sum;
+            }
+            break;
+        }
+     }
+ }
+            
+     
+ 
